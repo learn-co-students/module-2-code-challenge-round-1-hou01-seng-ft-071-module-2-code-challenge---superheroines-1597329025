@@ -1,0 +1,12 @@
+<h2>All Heroine-Power</h2>
+
+<ul>
+  <% @heroine_powers.each do |heroine_power| %>
+    <li>
+      Heronie: <%= heroine_power.heroine.name%></br>
+      Power: <%= heroine_power.power.name%></br>
+      strength: <%= heroine_power.strength%></br>
+    </li>
+    <br>
+  <% end %>
+</ul>
