@@ -1,0 +1,23 @@
+<ul>
+<% if flash[:messages] != nil %>
+    <% flash[:messages].each do |key,value| %>
+        <li>DOH! Error for input <%=key%>.</li>
+        <ul>
+        <% value.each do |index| %>
+            <li>- <%=index%></li><br>
+        <% end %>
+        </ul>
+    <% end %>
+<% end %>
+</ul>
+<h1>New Heroine Power</h1>
+
+<%= form_for @heroine_power do |f| %>
+    <%= f.label "Heroine" %><br>
+    <%= f.collection_select :heroine_id, Heroine.all, :id, :super_name %><br>
+    <%= f.label "Power" %><br>
+    <%= f.collection_select :power_id, Power.all, :id, :name %><br>
+    <%= f.label "Heroine Strength" %><br>
+    <%= f.text_field :strength %><br>
+    <%= f.submit "Bestoy Power" %><br>
+<% end %>
