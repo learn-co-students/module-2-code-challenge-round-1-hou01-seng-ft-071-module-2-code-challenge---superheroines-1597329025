@@ -1,0 +1,12 @@
+<h1> Heroine-Power </h1>
+<%= form_for @heroine_power do |f| %>
+    <%= f.label 'Select Your Heroine' %>
+    <%= f.collection_select :heroine_id, Heroine.all, :id, :name %>
+    <%= f.label 'Select Your Power' %>
+    <%= f.collection_select :power_id, Power.all, :id, :name %>
+    <%= f.label 'Input Your Strength' %>
+    <%= f.text_field :strength %>
+    <%= submit_tag "Create Heroine-Power" %>
+    <% end %>
+
+  
