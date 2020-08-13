@@ -1,0 +1,12 @@
+<h1>Create New Heroine Power</h1>
+<hr>
+<%= form_for @heroine_power do |f| %>
+Select Heroine: 
+<%= f.collection_select(:heroine, Heroine.all, :id, :name)%> <br> 
+Select Power:
+<%= f.collection_select(:power, Power.all, :id, :name)%> <br> 
+Strength:
+<%= f.text_field :strength %>
+
+<%= f.submit %>
+<% end %>
