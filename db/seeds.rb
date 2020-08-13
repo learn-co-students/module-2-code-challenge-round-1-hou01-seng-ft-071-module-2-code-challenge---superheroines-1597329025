@@ -24,3 +24,27 @@ heroines = [
 ]
 
 heroines.each { |heroine| Heroine.create(heroine) }
+
+
+heroine_powers = [   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[0].id },
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[1].id },
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[2].id },
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[3].id },
+   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[4].id },
+   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[5].id},
+   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[6].id },
+   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[7].id },
+   
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[8].id},
+   { power_id: Power.all.sample.id, heroine_id: Heroine.all[9].id  },
+
+   
+
+]
+
+heroine_powers.each { |heroine_power| HeroinePower.create(heroine_power) }
