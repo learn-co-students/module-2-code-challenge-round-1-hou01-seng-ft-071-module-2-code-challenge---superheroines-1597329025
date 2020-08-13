@@ -24,3 +24,7 @@ heroines = [
 ]
 
 heroines.each { |heroine| Heroine.create(heroine) }
+
+heroinepowers = [
+  {strength:"strong", heroine_id: 1, power_id: 2}
+]
