@@ -1,7 +1,8 @@
 <h1><%=@heroine.super_name%></h1>
 <h2><%=@heroine.name%></h2>
+
 <ul>
-<% @heroine.powers.each do |power|%>
-    <li><%= link_to power.name, power_path(power) %></li>
+<% @heroine.heroine_powers.each do |heroine_power|%>
+    <li>Power: <%= link_to heroine_power.power.name, power_path(heroine_power.power)%> Stength: <%=heroine_power.strength%></li>
 <% end %>
 </ul>
