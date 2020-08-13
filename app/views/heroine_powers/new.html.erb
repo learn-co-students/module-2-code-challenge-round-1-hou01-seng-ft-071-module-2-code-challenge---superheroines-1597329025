@@ -1,0 +1,19 @@
+<h1> Heroine Power Creation </h1>
+
+<% if flash[:messages] != nil %>
+    <% if flash[:messages]["strength"] != nil %>
+    <p style="color:red;"> <%= flash[:messages]["strength"][0] %> </p>
+    <% end %>
+
+    <% if flash[:messages]["power"] != nil %>
+    <p style="color:red;"> <%= flash[:messages]["power"][0] %> </p>
+    <% end %>
+<% end %>
+
+<%= form_for @heroine_power do |f| %>
+<%= f.collection_select :heroine_id, Heroine.all, :id, :name %>
+<%= f.collection_select :power_id, Power.all, :id, :name %>
+<%= f.label :strength %>
+<%= f.text_field :strength %>
+<%= f.submit "Imbue a Heroine with a new power!" %>
+<% end %>
