@@ -7,7 +7,6 @@ class HeroinesController < ApplicationController
   end
 
   def show
-    byebug
     @heroine_powers = HeroinePower.all.find_by(heroine_id: params[:id])
   end
 

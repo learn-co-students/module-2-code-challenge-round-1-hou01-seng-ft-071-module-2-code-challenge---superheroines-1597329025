@@ -1,5 +1,5 @@
 class HeroinePowersController < ApplicationController
-  before_action :get_hp, only: [:show]
+  before_action :get_hp, only: [:show, :create]
 
   def index
     @heroine_powers = HeroinePower.all
@@ -11,10 +11,11 @@ class HeroinePowersController < ApplicationController
 
   def create
     @heroine_power = HeroinePower.new(hp_params)
+    @heroine = Heroine.find_by(id: params[:heroine_power][:heroine_id])
 
     if @heroine_power.valid?
       @heroine_power.save
-      redirect_to heroine_power_path(@heroine_power)
+      redirect_to heroine_path(@heroine)
     else
       flash[:messages] = @heroine_power.errors.messages
       redirect_to new_heroine_power_path
